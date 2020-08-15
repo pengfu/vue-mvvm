@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #app {
+        display: flex;
+        flex-direction: column;
+      }
+      #app input {
+        width: 200px;
+        margin-top: 10px;
+      }
+      #app div {
+        margin-top: 10px;
+      }
+      #app button {
+        width: 100px;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+        {{message}}
+        <div>{{name}}</div>
+        <input type="text" v-model="name" />
+    </div>
+
+     <!-- <input type="text" v-model="name" />
+      <div>{{name}}</div>
+      <button @click="addAge">+</button>
+      <button @click="reverseMessage">reverse</button> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+    <script src="./src/vue.js"></script>
+    <script>
+      var app = new Vue({
+        el: '#app',
+        data: {
+          message: 'hello world!!',
+          age: 10,
+          name: 'Tom',
+        },
+        methods: {
+          addAge() {
+            this.age++
+          },
+          reverseMessage() {
+            this.message = this.message.split('').reverse().join('')
+          },
+        },
+      })
+    </script>
+  </body>
+</html>
