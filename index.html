@@ -24,17 +24,18 @@
   </head>
   <body>
     <div id="app">
-        {{message}}
-        <div>{{name}}</div>
-        <input type="text" v-model="name" />
+      {{message}}
+      <div>{{age}}</div>
+      <input type="text" v-model="name" />
     </div>
 
-     <!-- <input type="text" v-model="name" />
+    <!-- <input type="text" v-model="name" />
       <div>{{name}}</div>
       <button @click="addAge">+</button>
       <button @click="reverseMessage">reverse</button> -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
-    <script src="./src/vue.js"></script>
+    <!-- <script src="./src/vue.js"></script> -->
+    <script src="./src/vue2.js"></script>
     <script>
       var app = new Vue({
         el: '#app',
@@ -52,6 +53,13 @@
           },
         },
       })
+      setTimeout(() => {
+        app.age = 100
+        app.$data.message = 'erererer'
+
+        // console.log(app.age)
+      }, 1000)
+      app.name = 'Jack'
     </script>
   </body>
 </html>
